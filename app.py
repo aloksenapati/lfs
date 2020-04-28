@@ -154,7 +154,8 @@ def predict():
                              if dd==float(op3):
                                 ls3.append(data.iloc[i]['_id']['$oid'])
                         else:
-                            return 'invalid op2 input'
+                            z=['invalid op2 input]
+                            return z
             z=ls3
             return z
         elif op1=='competition': #type 2 case study
