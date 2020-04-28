@@ -88,7 +88,7 @@ def predict():
                     z=d
                     return z
                 else:
-                    z['put > or < symbole in op2']
+                    z=['put '>' or '<' symbole in op2']
                     return z
             else:
                 z=['invalid input op2']
