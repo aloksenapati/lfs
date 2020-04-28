@@ -84,8 +84,12 @@ def predict():
             elif op2=='==':
                 d['discounted_products_count']=len(data[data['discount%']==float(op3)])
                 d['avg_dicount']=data[data['discount%']==float(op3)]['discount%'].sum()/len(data[data['discount%']==float(op3)])
-                z=d
-                return z
+                if d['discounted_products_count']>0:
+                    z=d
+                    return z
+                else:
+                    z['put > or < symbole in op2']
+                    return z
             else:
                 z=['invalid input op2']
                 return z
