@@ -83,8 +83,8 @@ def predict():
                 return z
             elif op2=='==':
                 d['discounted_products_count']=len(data[data['discount%']==float(op3)])
-                d['avg_dicount']=data[data['discount%']==float(op3)]['discount%'].sum()/len(data[data['discount%']==float(op3)])
-                if d['discounted_products_count']>0:
+                d['avg_discount']=data[data['discount%']==float(op3)]['discount%'].sum()/len(data[data['discount%']==float(op3)])
+                if d['avg_discount']>0:
                     z=d
                     return z
                 else:
