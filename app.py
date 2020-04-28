@@ -154,7 +154,7 @@ def predict():
                              if dd==float(op3):
                                 ls3.append(data.iloc[i]['_id']['$oid'])
                         else:
-                            z=['invalid op2 input]
+                            z=['invalid op2 input']
                             return z
             z=ls3
             return z
