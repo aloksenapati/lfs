@@ -140,7 +140,7 @@ def predict():
                     df=pd.DataFrame(pd.DataFrame(data['similar_products'][1768]['website_results']).iloc[1][2],columns=['total_results','min_price','max_price','avg_price','avg_discount'])
                     
                     if df.iloc[0][0] !=0:
-                        fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
+                        fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j],columns=['total_results','min_price','max_price','avg_price','avg_discount'])
                         lt=fd.iloc[0][3]
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
