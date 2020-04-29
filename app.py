@@ -144,7 +144,7 @@ def predict():
                         #lt=float(fd.iloc[0][3])
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
-                        dd=(bp-float(fd.iloc[0][3]))*100/bp
+                        dd=(bp-fd.iloc[0][3])*100/bp
                         if op2=='>':
                             if dd>float(op3):
                                 ls3.append(data.iloc[i]['_id']['$oid'])
