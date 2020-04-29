@@ -137,7 +137,7 @@ def predict():
             ls3=[]
             for i in range(len(data)):
                 for j in range(4):
-                    df=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
+                    df=pd.DataFrame(pd.DataFrame(data['similar_products'][1768]['website_results']).iloc[1][2],columns=['total_results','min_price','max_price','avg_price','avg_discount'])
                     
                     if df.query('total_results !=0').iloc[0][0]==True:
                         fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
