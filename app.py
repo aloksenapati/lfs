@@ -139,7 +139,7 @@ def predict():
                 for j in range(4):
                     df=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
                     
-                    if df.iloc[0][0]==True:
+                    if df.query('total_results !=0').iloc[0][0]==True:
                         fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
                         lt=fd.loc['basket']['avg_price']
                         x=pd.DataFrame(data.iloc[:,10][i])
