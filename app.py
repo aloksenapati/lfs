@@ -138,10 +138,10 @@ def predict():
             for i in range(len(data)):
                 for j in range(4):
                     df=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
-                    n=df.iloc[0][0]
-                    if n!=0:
-                        lt_df=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
-                        lt=lt_df.iloc[0][3]
+                    
+                    if np.array(df['total_results'].values!=0)[0]==True:
+                        fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j])
+                        lt=fd.loc['basket']['avg_price']
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
                         dd=(bp-lt)*100/bp
