@@ -141,10 +141,8 @@ def predict():
                     
                     if df.iloc[0][0] !=0:
                         fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j],columns=['total_results','min_price','max_price','avg_price','avg_discount'])
-                        try:
-                            lt=pd.Series(fd['avg_price'])[0]
-                        except:
-                            lt=0
+                        lt=pd.Series(fd['avg_price'])[0]
+                        
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
                         dd=(bp-lt)*100/bp
