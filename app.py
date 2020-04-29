@@ -144,7 +144,7 @@ def predict():
                         try:
                             lt=pd.Series(fd['avg_price'])[0]
                         except:
-                            pass
+                            lt=0
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
                         dd=(bp-lt)*100/bp
