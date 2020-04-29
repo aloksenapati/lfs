@@ -141,10 +141,10 @@ def predict():
                     
                     if df.iloc[0][0] !=0:
                         fd=pd.DataFrame(pd.DataFrame(data['similar_products'][i]['website_results']).iloc[1][j],columns=['total_results','min_price','max_price','avg_price','avg_discount'])
-                        #lt=float(fd.iloc[0][3])
+                        lt=pd.Series(fd['avg_price'])[0]
                         x=pd.DataFrame(data.iloc[:,10][i])
                         bp=x.basket_price[1]
-                        dd=(bp-fd.iloc[0][3])*100/bp
+                        dd=(bp-lt)*100/bp
                         if op2=='>':
                             if dd>float(op3):
                                 ls3.append(data.iloc[i]['_id']['$oid'])
